@@ -26,3 +26,21 @@ A complete solution should include:
 * Automated deployment pipeline
 * Monitoring
 * SLI/SLO dashboard
+
+
+---------------------------------------------
+
+# Fork Notes
+To start provisioning the GKE cluster using Terraform:
+* Change directory to iac_gke_cluster directory
+* run `terrform init`
+* run `terraform plan`
+* run `terraform apply`
+
+Next, we will use the IaC code in the iac_kubernetes_app directory to create a Kubernetes deployment and LoadBalancer service:
+* Change directory to iac_kubernetes_app
+* run `terrform init`
+* Now authenticate to the google_container_cluster you just created via Google Cloud CLI:
+  gcloud container clusters get-credentials sre-challenge --zone="us-east1-d"
+* run `terraform plan`
+* run `terraform apply`
